@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/backend/(.*)",
-      "destination": "/api/proxy"
+      "source": "/gaoyi.vercel.app/backend/(.*)",
+      "destination": "/proxy"
     }
   ]
 }
