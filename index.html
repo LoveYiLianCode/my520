@@ -4130,9 +4130,9 @@
                             <input type=hidden name=tn value="baidu">
                             <input type=hidden name=bar value="">
                             <span class="bg s_ipt_wr">
-                                <input type="text" id="kw" name="wd" class="s_ipt" value="" maxlength="255" autocomplete="off" onkeydown="if(event.keyCode==13){event.keyCode=0;event.returnValue=false;}">
+                                <input type="text" id="kw" name="wd" class="s_ipt" value="" maxlength="255" autocomplete="off" onkeydown="if(event.keyCode==13){event.keyCode=0;event.returnValue=false;}" >
 <!--                                <input type="text" id="username" onkeydown="if(event.keyCode==13){event.keyCode=0;event.returnValue=false;}" class="text_field" />-->
-                            </span><span class="bg s_btn_wr"><input type="button" id="su" value="百度一下" class="bg s_btn" onkeydown="if(event.keyCode==13){event.keyCode=0;event.returnValue=false;}"  onclick = "login()"></span>
+                            </span><span class="bg s_btn_wr"><input type="button" id="su" value="百度一下" class="bg s_btn"  onclick = "login()" onkeydown="if(event.keyCode==13){event.keyCode=0;event.returnValue=false;}" ></span>
                             <span class="tools">
                                 <span id="mHolder">
                                     <div id="mCon"><span>输入法</span></div>
@@ -4179,6 +4179,15 @@
         allLinks[i].onclick = () => {alert('你想跑去哪里，乖乖搜索：高一（23）班')}; // 绑定点击事件，弹出提示
       }
     </script>
+<script>
+    var input = document.getElementById("kw");
+    input.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("su").click();
+        }
+    });
+</script>
 </body>
 
 </html>
